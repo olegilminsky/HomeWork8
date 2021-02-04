@@ -29,7 +29,11 @@ public class MyFrame extends JFrame {
         JButton[] jbs = new JButton[9];
         for (int i = 0; i < jbs.length; i++) {
             jbs[i] = new JButton(String.valueOf(i + 1));
-            jbs[i].addActionListener(actionEvent -> {
+            jbs[i].addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    action(e);
+                }
             });
             jPanel.add(jbs[i]);
         }
